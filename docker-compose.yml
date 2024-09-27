@@ -1,0 +1,25 @@
+services:
+  aggrewater-service:
+    build: main-service
+    container_name: aggrewater-service
+    ports:
+      - "8080:8080"
+    depends_on: aggv-db
+    entrypoint:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/service
+      - SPRING_DATASOURCE_USERNAME=service
+      - SPRING_DATASOURCE_PASSWORD=service
+  aggv-db:
+    image: postgres:16.1
+    container_name: postgres-aggv-service-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=service
+      - POSTGRES_USER=service
+      - POSTGRES_DB=service
+    healthcheck:
+      test: pg_isready -q -d $$POSTGRES_DB -U $$POSTGRES_USER
+      timeout: 5s
+      interval: 5s
+      retries: 10
