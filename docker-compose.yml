@@ -5,17 +5,17 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - aggv-db
+      - aggw-db
     entrypoint:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/service
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://aggw-db:5433/service
       - SPRING_DATASOURCE_USERNAME=service
       - SPRING_DATASOURCE_PASSWORD=service
 
-  aggv-db:
+  aggw-db:
     image: postgres:16.1
-    container_name: postgres-aggv-service-db
+    container_name: postgres-aggw-service-db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_PASSWORD=service
       - POSTGRES_USER=service
