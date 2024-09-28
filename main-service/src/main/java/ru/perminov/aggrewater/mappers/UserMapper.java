@@ -5,10 +5,11 @@ import ru.perminov.aggrewater.model.User;
 
 public class UserMapper {
     public static User toEntity(UserDto userDto) {
+
         return new User(userDto.getEmail(), userDto.getName());
     }
 
     public static UserDto toDto (User user) {
-        return new UserDto(user.getId(), user.getEmail(), user.getName());
+        return new UserDto(user.getId(), user.getEmail(), user.getUsername());
     }
 }
