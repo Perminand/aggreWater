@@ -19,3 +19,6 @@ spring:
   sql:
     init:
       mode: always
+setting:
+  start:
+    roles: ROLE_USER

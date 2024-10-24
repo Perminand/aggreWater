@@ -28,6 +28,7 @@ public class User implements UserDetails {
     @Size(min = 5, message = "Не меньше 5 знаков")
     private String email;
 
+    @Column(unique = true)
     @Size(min = 3, message = "Не меньше 3 знаков")
     private String username;
 
@@ -36,8 +37,11 @@ public class User implements UserDetails {
     @Transient
     private String passwordConfirm;
 
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
+
+
 
     public User(String email, String username) {
         this.email = email;
