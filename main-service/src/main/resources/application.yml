@@ -2,9 +2,9 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://62.109.21.174/service
-    username: service
-    password: service
+    url: jdbc:postgresql://62.109.21.174:5432/users
+    username: users
+    password: users
   output:
     ansi:
       enabled: ALWAYS
