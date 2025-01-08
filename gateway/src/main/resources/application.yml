@@ -1,6 +1,19 @@
+admin:
+  username: admin
+  password: admin
+  email: admin@admin.ru
+
+token:
+  signing:
+    key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
+
 server:
   port: 8080
 spring:
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
   datasource:
     url: jdbc:postgresql://62.109.21.174:5432/users
     username: users
@@ -11,7 +24,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -1,4 +1,4 @@
-package ru.perminov.dto;
+package ru.perminov.aggrewater.dto;
 
 public class OrderDto {
 

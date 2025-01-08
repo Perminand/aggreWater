@@ -1,15 +1,15 @@
 services:
-  users-service:
-    build: ./main-service
-    container_name: users-service
-    ports:
-      - "8080:8080"
-    depends_on:
-      - aggw-db
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://aggw-db:5432/users
-      - SPRING_DATASOURCE_USERNAME=users
-      - SPRING_DATASOURCE_PASSWORD=users
+#  users-service:
+#    build: ./gateway
+#    container_name: users-service
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - aggw-db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://aggw-db:5432/users
+#      - SPRING_DATASOURCE_USERNAME=users
+#      - SPRING_DATASOURCE_PASSWORD=users
 
   aggw-db:
     image: postgres:16.1

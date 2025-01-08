@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 @Entity
 @Getter
 @Setter
-@Table(name = "t_role")
+@Table(name = "roles")
 @NoArgsConstructor
 public class Role implements GrantedAuthority {
 
@@ -17,7 +17,10 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String name;
+
+    private String description;
 
 
     public Role(Long id) {

@@ -5,6 +5,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import ru.perminov.aggrewater.dto.UserDto;
+import ru.perminov.aggrewater.dto.response.JwtAuthenticationResponse;
+import ru.perminov.aggrewater.model.Role;
+import ru.perminov.aggrewater.model.TokenAccess;
+import ru.perminov.aggrewater.model.User;
 import ru.perminov.aggrewater.repository.TokenAccessRepository;
 import ru.perminov.aggrewater.repository.UserRepository;
 import ru.perminov.aggrewater.service.jwt.JwtService;
@@ -31,9 +36,9 @@ public class AuthenticationService {
      * @param request данные пользователя
      * @return токен
      */
-    public JwtAuthenticationResponse signUp(UserDtoWeb request) {
-        User user = userService.create(request);
-        return new JwtAuthenticationResponse(user.getTokenAccess().getName());
+    public JwtAuthenticationResponse signUp(UserDto request) {
+        User user = userService.createUser(request);
+        return new JwtAuthenticationResponse(user.getTokenAccess().getName(), user.getId());
     }
 
     /**
@@ -42,7 +47,7 @@ public class AuthenticationService {
      * @param request данные пользователя
      * @return токен
      */
-    public JwtAuthenticationResponse signIn(SignInRequest request) {
+    public JwtAuthenticationResponse signIn(UserDto request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 request.getUsername(),
                 request.getPassword()
@@ -70,6 +75,6 @@ public class AuthenticationService {
             break;
         }
 
-        return new JwtAuthenticationResponse(tokenAccess.getName());
+        return new JwtAuthenticationResponse(tokenAccess.getName(), user.getId());
     }
     }

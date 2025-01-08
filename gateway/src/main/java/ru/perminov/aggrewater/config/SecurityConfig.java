@@ -26,13 +26,14 @@ import java.util.List;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private static final String HOME_PAGE = "";
+    private static final String HOME_PAGE = "/";
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserSecurityService userSecurityService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
+        http
+                .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(request -> {
                     var corsConfiguration = new CorsConfiguration();
                     corsConfiguration.setAllowedOriginPatterns(List.of("*"));
@@ -44,7 +45,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                         // Можно указать конкретный путь, * - 1 уровень вложенности, ** - любое количество уровней вложенности
                         .requestMatchers("/api/v1/apps/auth/login**").permitAll()
-                        .requestMatchers("/templates/**", "/static/**").permitAll()
+                        .requestMatchers("/templates/**", "/static/css/**", "/static/js/**").permitAll()
                         .requestMatchers("/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/swagger-resources/*", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")

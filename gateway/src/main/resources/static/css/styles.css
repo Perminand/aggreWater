@@ -1,0 +1,97 @@
+/* Общий стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Заголовок */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Основной контент */
+main {
+    padding: 20px;
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Контейнеры */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+.containerButton {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.column {
+    display: flex;
+    justify-content: flex-end; /* Выравнивание элементов по правому краю */
+}
+
+
+
+/* Поля ввода и кнопки */
+input {
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+.hidden {
+ display: none;
+}
+
+.visible {
+ display: block;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

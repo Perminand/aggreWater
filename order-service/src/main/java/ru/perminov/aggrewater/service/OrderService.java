@@ -1,6 +1,6 @@
-package ru.perminov.service;
+package ru.perminov.aggrewater.service;
 
-import ru.perminov.dto.OrderDto;
+import ru.perminov.aggrewater.dto.OrderDto;
 
 import java.util.List;
 

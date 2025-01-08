@@ -12,8 +12,8 @@
     <name>Aggrewater</name>
 
     <modules>
-        <module>gateway</module>
         <module>order-service</module>
+        <module>gateway</module>
     </modules>
 
     <groupId>ru.perminov</groupId>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+     <title>GPS Tracker</title>
+    <link href="/css/styles.css" rel="stylesheet">
+ </head>
+<body>
+<header> <h1>Вход в систему</h1>
+</header>
+<main>
+    <div class="container">
+        <form action="/api/v1/apps/auth/login" id="form" method="post">
+            <label for="username">Пользователь:</label>
+            <input id="username" name="username" required type="text"><br>
+            <label for="password">Пароль:</label>
+            <input id="password" name="password" required type="password"><br>
+            <button type="submit">Войти</button>
+           </form>
+    </div>
+</main>
+<footer><p>&copy; 2024 Perminov production</p></footer>
+</body>
+</html>

@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ru.perminov.dto.OrderDto;
-import ru.perminov.service.OrderService;
+import ru.perminov.aggrewater.dto.OrderDto;
+import ru.perminov.aggrewater.service.OrderService;
 
 import java.util.List;
 

@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: auto; /* Можно изменить на любую подходящую ширину */
+    margin: 20px; /* Отступы между колонками */
+}

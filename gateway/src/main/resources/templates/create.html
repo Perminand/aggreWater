@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <div th:replace="fragments/base::title"></div>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<div th:replace="fragments/base::header"></div>
+<div class="container">
+    <form action="/" method="POST">
+        <div class="form-group">
+            <h2>Регистрация</h2>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="realPassword">Пароль:</label>
+            <input type="password" class="form-control" id="realPassword" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Подтвердите пароль:</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <button class="btn btn-primary" id="createUserButton" onclick="submitForm()" type="submit">Сохранить</button>
+        <button class="btn btn-danger" onclick="window.location.href = '/'" type="submit">Назад</button>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div th:replace="fragments/base::footer"></div>
+<script src="/js/create.js"></script>
+</body>
+</html>

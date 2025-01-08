@@ -1,4 +1,4 @@
-package ru.perminov.model;
+package ru.perminov.aggrewater.model;
 
 import lombok.Data;
 

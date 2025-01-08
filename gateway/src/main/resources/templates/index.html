@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/base::title"></div>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/index.js"></script>
+</head>
+<body>
+<div th:replace="fragments/base::header"></div>
+
+<div class="containerButton">
+    <div class="row">
+        <div class="column">
+            <div class="containerButton">
+                <button class="btn btn-primary" onclick="submitSingIn()" type="submit">Войти</button>
+                <button class="btn btn-primary" onclick="submitSingUp()" type="submit">Регистрация</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/base::footer"></div>
+</body>
+</html>
