@@ -31,6 +31,6 @@ public class UserDto {
     public UserDto(Long id, String email, String name) {
         this.id = id;
         this.email = email;
-        this.username = name;
+        this.username = email;
     }
 }

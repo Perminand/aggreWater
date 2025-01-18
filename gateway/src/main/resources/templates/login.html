@@ -13,12 +13,14 @@
 <main>
     <div class="container">
         <form action="/api/v1/apps/auth/login" id="form" method="post">
-            <label for="username">Пользователь:</label>
-            <input id="username" class="form-control" name="username" required type="text"><br>
+            <label for="username">Электронная почта:</label>
+            <input id="username" class="form-control" name="email" required type="email"><br>
             <label for="password">Пароль:</label>
             <input id="password" class="form-control" name="password" required type="password"><br>
-            <button type="submit">Войти</button>
-           </form>
+            <button class="btn btn-primary" type="submit">Войти</button>
+            <button class="btn btn-primary" onclick="submitSingUp()" type="submit">Регистрация</button>
+
+        </form>
     </div>
 </main>
 <div th:replace="fragments/base::footer"></div>

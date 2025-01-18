@@ -28,9 +28,6 @@ public class UserSecurityService implements UserDetailsService {
     @Value("${admin.password}")
     String adminPassword;
 
-    @Value("${admin.email}")
-    String adminEmail;
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if(repository.existsByUsername(username)) {
@@ -47,7 +44,6 @@ public class UserSecurityService implements UserDetailsService {
             Role role = roleRepository.findByName("ROLE_ADMIN").get();
             User user = new User();
             user.setUsername(adminName);
-            user.setEmail(adminEmail);
             user.setPassword(coder.encode(adminPassword));
             user.setRoles(Set.of(role));
             return user;

@@ -1,7 +1,6 @@
 admin:
-  username: admin
+  username: admin@admin.ru
   password: admin
-  email: admin@admin.ru
 
 token:
   signing:

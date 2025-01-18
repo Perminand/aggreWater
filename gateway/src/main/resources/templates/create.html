@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <div th:replace="fragments/base::title"></div>
     <link href="/css/styles.css" rel="stylesheet">
+    <script src="/js/create.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
@@ -25,7 +26,7 @@
             <label for="confirmPassword">Подтвердите пароль:</label>
             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
         </div>
-        <button class="btn btn-primary" id="createUserButton" onclick="submitForm()" type="submit">Сохранить</button>
+        <button class="btn btn-primary" id="createUserButton" type="submit">Сохранить</button>
         <button class="btn btn-danger" onclick="window.location.href = '/'" type="submit">Назад</button>
     </form>
 </div>
